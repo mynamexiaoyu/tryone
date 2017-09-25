@@ -1,0 +1,44 @@
+<div class="clearfix">
+    <a class="next" ui-sref="gzjl">下一页</a>
+    <a class="prev" ui-sref="grjn">上一页</a>
+</div>
+<div class="title text">
+    <p ng-bind="jybj.text"></p>
+    <table>
+        <tr ng-repeat="(x,y) in eduExp">
+            <td ng-if="$odd" style="background-color: #cccccc">{{x}}</td>
+            <td ng-if="$odd" style="background-color: #cccccc">{{y}}</td>
+            <td ng-if="$even">{{x}}</td>
+            <td ng-if="$even">{{y}}</td>
+        </tr>
+    </table>
+
+    <div class = "mydiv text-center">
+
+        <ul class = "no-bullet">
+            <li class = "li-img" ng-show = "show01" ng-class = "{'fadeLeft':'left-animation', 'fadeRight':'right-animation'}[fade01]">
+                <img src="img/k1.jpg">
+            </li>
+            <li class = "li-img" ng-show = "show02" ng-class = "{'fadeLeft':'left-animation', 'fadeRight':'right-animation'}[fade02]">
+                <img src="img/k2.jpg">
+            </li>
+            <li class = "li-img" ng-show = "show03" ng-class = "{'fadeLeft':'left-animation', 'fadeRight':'right-animation'}[fade03]">
+                <img src="img/k3.jpg">
+            </li>
+            <li class = "li-img" ng-show = "show04" ng-class = "{'fadeLeft':'left-animation', 'fadeRight':'right-animation'}[fade04]">
+                <img src="img/k4.jpg">
+            </li>
+            <li class = "li-img" ng-show = "show05" ng-class = "{'fadeLeft':'left-animation', 'fadeRight':'right-animation'}[fade05]">
+                <img src="img/k1.jpg">
+            </li>
+        </ul>
+        <div class = "leftButton" ng-click = "prevImg()">
+            <button class = "button success ">上一张</button>
+        </div>
+        <div class = "rightButton" ng-click = "nextImg()">
+            <button class = "button success ">下一张</button>
+        </div>
+    </div>
+    
+</div>
+

@@ -1,0 +1,23 @@
+{
+    "message":{
+        "Name": "张晓雨",
+        "Sex": "男",
+        "Education": "本科",
+        "Major":"电气工程及其",
+        "Address":"北京昌平",
+        "WorkingLife":"三年",
+        "ContactNumber":"18810900730",
+        "Email":"281185684@qq.com"
+    },
+    "webMsg":{
+        "天津美莱PC站1":"http://www.tjmylike.com",
+        "天津美莱PC站2":"http://bk.tjmylike.com",
+        "天津美莱移动站":"http://m.tjmylike.com"
+    },
+    "eduExp":{
+        "学校名称":"河北科技大学理工学院",
+        "起止时间":"2010年9月~2014年6月",
+        "专业":"电气工程及其自动化",
+        "培养方式":"全日制本科教育"
+    }
+}

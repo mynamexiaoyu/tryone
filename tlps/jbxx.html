@@ -1,0 +1,20 @@
+<div class="clearfix">
+	<a class="next" ui-sref="qzyx">下一页</a>
+	<a class="prev" ui-sref="/">上一页</a>
+</div>
+<div class="title text">
+    <p ng-bind="jbxx.text"></p>
+</div>
+<button class="btn" ng-click='loading()'>我的信息</button>
+<table>
+    <tr ng-repeat="(x, y) in message" class="repeat-item">
+        <td ng-if="$odd" style="background-color:#ccc">{{x}}</td>
+        <td ng-if="$odd" style="background-color:#ccc">{{y}}</td>
+        <td ng-if="$even">{{x}}</td>
+        <td ng-if="$even">{{y}}</td>
+    </tr>
+</table>
+<div class="text">
+    <jbxxdirective>天津美莱</jbxxdirective>
+</div>
+

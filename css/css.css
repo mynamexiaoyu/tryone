@@ -1,0 +1,572 @@
+/*清零*/
+html {font-family:'微软雅黑';}
+body{ font-family: 'Microsoft YaHei', '微软雅黑', '宋体', Arial, Helvetica, sans-serif; color:#333; background:#fff; }
+html, body, div, span, applet, object, iframe,h1, h2, h3,h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i,center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td{ margin:0px; padding:0px; border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent; }
+address,caption,cite,code,dfn,em,var,em,cite,strong,i,b{font-style:normal;font-weight:normal;}
+html{margin:0; *overflow-x:hidden;}
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}
+ol, ul{ list-style:none;}
+table{ cellspacing:0; cellpadding:0; border-collapse:collapse;}
+th{ text-align:left; font-weight:normal;}
+input,textarea{ outline: none;font-family:'Microsoft YaHei', '微软雅黑', '宋体', Arial, Helvetica, sans-serif; }
+textarea{ resize:none; }
+img{ vertical-align:middle; border:none;}
+fieldset{ border:none;}
+a{ color:#333; text-decoration:none;  }
+a:hover {text-decoration:none;}
+button::-moz-focus-inner{ border:0; padding:0; margin:0; }
+/*清浮动*/
+.clearfix:after {visibility:hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+.clearfix{*zoom:1; }
+.fl{float:left;}
+.fr{float:right;}
+
+/*.container{height:100%;}*/
+@media (min-width:320px) and (max-width:640px) {body{width:100%;}}
+@media (min-width:640px) {body{width:640px;margin:0 auto;}}
+@media (max-width:320px) {body{width:100%;margin:0 auto;}}
+/*.content{width:100%;margin:0 auto;position:relative;}*/
+body{margin:0 auto;padding:0;o verflow: hidden;position: relative;}
+/*a:active{ text-decoration: none;}*/
+.page {
+    /*width:100%;*/
+    padding:0.2rem;
+    /*position:absolute;*/
+    bottom:0;
+    top:0;
+    box-sizing: border-box;
+    /*overflow: hidden;*/
+}
+
+
+/*公用*/
+.ng-enter {
+    z-index: 8888;
+}
+.ng-leave {
+    z-index: 9999;
+}
+.next{
+    float: right;
+    font-size: 0.3rem;
+    color: #fff;
+    position: relative;
+    /*position: absolute;
+    bottom:0.1rem;
+    right:0.1rem;*/
+}
+.next:after{
+    content:'>>';
+    display: inline-block;
+    width:0.2rem;
+    height:0.1rem;
+    position: absolute;
+    top:0;
+    left:0;
+    animation: toRight 1s  infinite ease-out;
+    clear: both;
+}
+@keyframes toRight {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(200%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+
+}
+.prev{
+    float: left;
+    font-size: 0.3rem;
+    color: #fff;
+    position: relative;
+    /*position: absolute;
+    bottom: 0.1rem;
+    left:0.1rem;*/
+}
+.prev:after{
+    content:'<<';
+    display: inline-block;
+    width:0.2rem;
+    height:0.1rem;
+    position: absolute;
+    top:0;
+    left:0;
+    animation: toLeft 1s  infinite ease-out;
+    clear: both;
+}
+@keyframes toLeft {
+    0%{
+        transform: translateX(200%);
+    }
+    50%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(200%);
+    }
+
+}
+.btn{
+    display: inline-block;
+    background-color: darkmagenta;
+    border:none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: "微软雅黑";
+	animation:changeBgcol 2s infinite linear;
+}
+@keyframes changeBgcol{
+    0%{
+        background-color: darkmagenta;
+    }
+    50%{
+        background:red;
+    }
+    100%{
+        background-color: darkmagenta;
+    }
+}
+table{
+    width: 100%;
+}
+table tr td{
+    width:50%;
+    font-size: 0.3rem;
+}
+.text{
+    font-size: 0.3rem;
+    color: #fff;
+    line-height: 0.38rem;
+}
+/*jbxx*/
+.jbxx{
+    background-color:#00D0BC;
+    color:#FFFFFF;
+    height: 8rem;
+}
+.repeat-item{
+    transition: 0.5s linear all;
+    position: relative;
+}
+.repeat-item.ng-enter-stagger{
+    transition-delay: 0.3s;
+    transition-duration: 0s; 
+}
+.repeat-item.ng-enter{
+    opacity: 0;
+    left: 20px;
+}
+.repeat-item.ng-enter-active{
+    opacity: 1;
+    left: 0px;
+}
+@keyframes scaleUp {
+    /*from {
+        opacity: 0.3;
+        -webkit-transform: scale(0);
+    }
+    to{
+        transform: scale();
+    }*/
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    20%{
+        opacity: 0.2;
+        transform: scale(0.2);
+    }
+    40%{
+        opacity: 0.4;
+        transform: scale(0.6);
+    }
+    60%{
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    80%{
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+    95%{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes rotateFall {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+        animation-timing-function: ease-out;
+    }
+    40% {
+        transform: rotateZ(17deg);
+    }
+    60% {
+        transform: rotateZ(16deg);
+    }
+    100% {
+        transform: translateY(100%) rotateZ(17deg);
+    }
+}
+
+.jbxx.ng-enter {
+    animation: scaleUp 0.5s both ease-in;
+}
+.jbxx.ng-leave {
+    transform-origin: 0% 0%;
+    animation: rotateFall 1s both ease-in;
+}
+/*.fadeIn{transition:1s all;}*/
+/*显示操作*/
+.fadeIn.ng-enter{opacity:0;}
+.fadeIn.ng-enter-active{opacity:1;}
+/*隐藏操作*/
+.fadeIn.ng-leave{display:none;}
+.fadeIn.ng-enter-stagger{animation-delay:0.1s;}
+.jbxxhello{color:blue; transition:all 2s linear;}
+.jbxxhello-add{color:red;transition:all 2s linear;}
+/*qzyx*/
+.qzyx{
+    background-color:#E59400;
+    color:#FFFFFF;
+}
+@keyframes slideInRight {
+    from {
+        transform:translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes slideOutLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
+.qzyx.ng-enter {
+    animation:slideInRight 0.5s both ease-in;
+}
+.qzyx.ng-leave {
+    animation:slideOutLeft 0.5s both ease-in;
+}
+.addBox{transition:1s all;}
+/*显示操作*/
+/*.addBox.ng-enter{opacity:0;}
+.addBox.ng-enter-active{opacity:1;}*/
+
+.addBox.ng-enter{ opacity:0;animation:leftIn 1s ease-out;}
+.addBox.ng-enter-active{ opacity:1;animation:leftIn 1s ease-out;}
+@keyframes leftIn{
+	from{
+		transform:translateX(-100%);
+		}
+	to{
+		transform:translateX(0%);
+		}	
+}
+@keyframes righrOut{
+	from{
+		transform:translateX(0%);
+		}
+	to{
+		transform:translateX(100%);
+		}	
+}
+/*隐藏操作*/
+.addBox.ng-leave{display:none;}
+.addBox.ng-enter-stagger{animation-delay:0.1s;}
+
+/*grjn*/
+.grjn{
+    background-color: darkgreen;
+    color:#FFFFFF;
+}
+@keyframes slideInUp {
+    from {
+        transform:translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes slideOutDown {
+    to {
+        transform: translateY(100%);
+        /*transform: translateZ(-3000px) rotateZ(360deg);
+        opacity: 0;*/
+    }
+}
+.grjn.ng-enter {
+    animation:slideInUp 0.5s both ease-in;
+}
+.grjn.ng-leave {
+    animation:slideOutDown 0.5s both ease-in;
+}
+/*jybj*/
+.jybj{
+    background-color: cadetblue;
+    color:#FFFFFF;
+}
+@keyframes scaleInUp{
+    from{
+        transform-origin: 50% 100%;
+        transform:scale(0);
+    }
+    to {
+        transform:scale(1);
+    }
+}
+@keyframes scaleOutDown{
+    to{
+        transform:scale(0);
+        transform-origin: 50% 100%;
+    }
+}
+.jybj.ng-enter {
+    animation:scaleInUp 0.5s both ease-out;
+}
+.jybj.ng-leave {
+    animation:scaleOutDown 0.5s both ease-out;
+}
+.mydiv{
+    position: relative;
+    width:100%;
+    height:4.39rem;
+    margin:0.4rem auto;
+    background-color: green;
+    overflow: hidden;
+} /*整个div的样式*/
+.li-img{
+    width: 100%;
+    height: auto;
+}
+.li-img img{
+    width: 100%;
+}
+.leftButton{
+    position: absolute;
+    top: 45%;
+}
+.rightButton{
+    position: absolute;
+    top: 45%;
+    right: 0;
+}
+/*图片从左面隐藏的动画*/
+@keyframes left-hide {
+    from{
+        margin-left: 0;
+    }
+    to{
+        margin-left: -100%;
+    }
+} 
+/*图片从左面出现的动画*/
+@keyframes left-show{
+    from{
+        margin-left: -100%;
+    }
+    to{
+        margin-left: 0;
+    }
+} 
+/*图片从右面消失的动画*/
+@keyframes right-hide{
+    from{
+        margin-left: 0;
+    }
+    to{
+        margin-left: 100%;
+    }
+} 
+/*图片从右面出现的动画*/
+@keyframes right-show{
+    from{
+        margin-left: 100%;
+    }
+    to{
+        margin-left: 0;
+    }
+}  
+.left-animation{
+    height: auto;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.left-animation .ng-hide-add{
+    animation: left-hide 1s;
+
+}
+.left-animation .ng-hide-remove{
+    animation: left-show 1s;
+
+}
+.right-animation{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+.right-animation .ng-hide-add{
+    animation: right-hide 1s;
+
+}
+.right-animation .ng-hide-remove{
+    animation: right-show 1s;
+
+}
+/*gzjl*/
+.gzjl{
+    background-color: darkcyan;
+    color:#FFFFFF;
+}
+@keyframes rotateInLeft {
+    from{
+        transform-origin: -100% 0%;
+        transform: rotateY(90deg);
+    }
+    to{
+        transform-origin: 0% 0%;
+        transform: rotateY(0deg);
+    }
+}
+@keyframes rotateOutright {
+    to{
+        transform-origin: 100% 100%;
+        transform: rotateY(-180deg);
+    }
+}
+.gzjl.ng-enter {
+    animation:rotateInLeft 0.5s both ease-out;
+}
+.gzjl.ng-leave {
+    animation:rotateOutright 0.5s both ease-out;
+}
+/*xmjy*/
+.xmjy{
+    background-color: steelblue;
+    color:#FFFFFF;
+}
+@keyframes rotateInNewspaper {
+    from{
+        transform-origin: 0% 0%;
+        opacity: 0;
+        transform: translateZ(-3000px) rotateZ(360deg) scale(0);
+    }
+    to{
+        transform-origin: 50% 50%;
+        opacity: 1;
+        transform: translateZ(0) rotateZ(0deg) scale(1);
+    }
+}
+@keyframes rotateOutNewspaper {
+    to {
+        transform-origin: 100% 100%;
+        transform: translateZ(-3000px) rotateZ(360deg) scale(0);
+        opacity: 0;
+    }
+}
+.xmjy.ng-enter {
+    animation:rotateInNewspaper 0.5s both ease-out;
+}
+.xmjy.ng-leave {
+    animation:rotateOutNewspaper 0.5s both ease-out;
+}
+.nav{
+    width: 100%;
+    margin:0.3rem 0;
+}
+.nav a{
+    display: inline-block;
+    width:33.33%;
+    box-sizing: border-box;
+    background-color:#00D0BC;
+    float: left;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    color: #fff;
+}
+.active{
+    background-color: #5bc0de !important;
+    color: #ccc !important;
+}
+.touchPos{
+    position: absolute;
+    top: 2rem;
+    left: 0;
+}
+.box{transition:1s all;p osition:absolute;height:8rem;}
+/*显示操作*/
+.box.ng-enter{opacity:0;}
+.box.ng-enter-active{opacity:1;}
+/*隐藏操作*/
+.box.ng-leave{opacity:1;display: none;}
+.box.ng-leave-active{opacity:0;display: none;}
+
+/*zwpj*/
+.zwpj{
+    background-color: darkkhaki;
+    color:#FFFFFF;
+}
+@keyframes scaleInUp1{
+    from{
+        transform-origin: 50% 0%;
+        transform:scale(0);
+    }
+    to {
+        transform:scale(1);
+    }
+}
+@keyframes scaleOutDown1{
+    to{
+        transform:scale(0);
+        transform-origin: 50% 0%;
+    }
+}
+.zwpj.ng-enter {
+    animation:scaleInUp1 0.5s both ease-out;
+}
+.zwpj.ng-leave {
+    animation:scaleOutDown1 0.5s both ease-out;
+}
+/*footer*/
+footer{
+    width: 100%;
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    line-height: 0.6rem;
+    background-color:lightblue;
+    max-width: 640px;
+    margin: 0 auto;
+}
+footer ul li{
+    width: 25%;
+    box-sizing:border-box;
+    float: left;
+    font-size: 0.4rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem;
+}
+footer ul li a{
+    color: #fff;
+}
+footer ul li a:hover{
+    color:#000;
+}

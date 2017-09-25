@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,width=device-width" />
+<!--<script src="framework/jquery.min.js"></script>-->
+<script src="framework/angular.min.js"></script>
+<script src="framework/angular-touch.min.js"></script>
+<script src="framework/angular-ui-router.min.js"></script>
+<script src="framework/angular-animate.min.js"></script>
+<script src="js/myApp.js"></script>
+<script src="js/controll.js"></script>
+<script src="js/service.js"></script>
+<script src="js/directive.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/rem.js"></script>
+<link href="css/css.css" type="text/css" rel="stylesheet">
+<title>introduceMyself</title>
+</head>
+<body style="position: relative;">
+	
+	<!--头部-->
+	<header>
+		<h1 style="font-size: 0.4rem;text-align: center;line-height: 0.6rem;background: lightblue;color: #fff;">求职简历</h1>
+	</header>
+    
+    <!--内容-->
+    <section style="position: relative;">
+    	<div class="content page {{pageClass}}" ui-view></div>
+    </section>
+    
+    <!--尾部-->
+    <div style="height: 0.6rem;width: 100%"></div>
+	<footer>
+		<ul class="clearfix">
+			<li><a href="http://www.baidu.com">首页</a></li>
+			<li><a href="http://www.baidu.com">简介</a></li>
+			<li><a href="http://www.baidu.com">地址</a></li>
+			<li><a href="http://www.baidu.com">建议</a></li>
+		</ul>
+	</footer>
+    
+</body>
+</html>

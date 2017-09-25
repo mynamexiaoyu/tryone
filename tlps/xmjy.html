@@ -1,0 +1,13 @@
+<div class="clearfix">
+	<a class="next" ui-sref="zwpj">下一页</a>
+	<a class="prev" ui-sref="gzjl">上一页</a>
+</div>
+<div class="title text">
+    <p ng-bind="xmjy.text"></p>
+    <div class="nav clearfix" xmjy-nava>
+        <a ui-sref="xmjy.xm1">项目一</a>
+        <a ui-sref="xmjy.xm2">项目二</a>
+        <a ui-sref="xmjy.xm3">项目三</a>
+    </div>
+    <div ui-view class="text box"></div>
+</div>

@@ -1,0 +1,31 @@
+<div class="clearfix">
+    <a class="next" ui-sref="grjn">下一页</a>
+    <a class="prev" ui-sref="jbxx">上一页</a>
+</div>
+<div class="title text">
+    <p ng-bind="qzyx.text"></p>
+    <p>工作岗位:<lable ng-bind="job"></lable></p>
+    <p>工作地区:<lable ng-bind="addres"></lable></p>
+    <p>工作性质:<lable ng-bind="workNature"></lable></p>
+    <p>期望月薪:<lable ng-bind="salary"></lable></p>
+    <p>希望行业:<lable ng-bind="profession"></lable></p>
+    <table>
+        <tr ng-repeat="(x,y) in webMsg">
+            <td ng-if="$odd" style="background-color:#d0e9c6;">{{x}}</td>
+            <td ng-if="$odd" style="background-color: #d0e9c6;">{{y}}</td>
+            <td ng-if="$even">{{x}}</td>
+            <td ng-if="$even">{{y}}</td>
+        </tr>
+    </table>
+    <input type="text" ng-model="input"><button ng-click="add()">添加</button>
+    <ul>
+        <li ng-repeat="area in areas track by $index" class="addBox" style="margin-top: 0.1rem">
+            <div ng-show="!mail.showActions" ng-swipe-left="mail.showActions=true">{{area}}
+                <label style="display:inline-block;float: right" ng-show="!mail.showActions" ng-swipe-right="mail.showActions=false">
+                    <button ng-click="removeArea($index)">Delete</button>
+                </label>
+            </div>
+
+        </li>
+    </ul>
+</div>
